@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    {% csrf_token %}
+    <form method="post" enctype="multipart/form-data">
+       {{ form.as_p }}
+       <button type="submit">Получить количество слов</button>
+    </form>
+    <span>Количество этих слов в файле: {{ wordcount }}</span>
+    {% csrf_token %}
+    <form class="grusers" method="post">
+        <button type="submit" name="delete">Очистить память</button>
+    </form>
+</div>
+</body>
+</html>
